@@ -10,3 +10,6 @@ Clone the repository and install dependencies:
 git clone <your-private-repo-url>
 cd mercor-challenge
 pip install -r requirements.txt
+```
+
+dfsvd
