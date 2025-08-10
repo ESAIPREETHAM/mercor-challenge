@@ -64,10 +64,10 @@ pip install -r requirements.txt
 ## Acknowledgment of AI assistance
 
 Parts of this codebase were developed with the help of AI tools (e.g., ChatGPT) for:
-  i) I used it for only boilerplate code generation
-  ii) for debugging import path issues
-  iii) And finally drafting initial README and project structure
-This code is completely implemented by me (i.e, author).
+  1) I used it for only for boilerplate code generation
+  2) for debugging import path issues
+  3) And finally drafting initial README and project structure
+This code is completely implemented by me (i.e, author: Saipreetham Eamani).
 Thank you.
 
 
