@@ -7,7 +7,7 @@
 ### Installation
 Clone the repository and install dependencies:
 ```bash
-git clone <your-private-repo-url>
+git clone https://github.com/ESAIPREETHAM/mercor-challenge
 cd mercor-challenge
 pip install -r requirements.txt
 ```
