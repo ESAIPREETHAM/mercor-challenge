@@ -61,6 +61,20 @@ Install them with:
 ```bash
 pip install -r requirements.txt
 ```
+
+## Approximate Time Taken
+
+| File / Task                          | Time Spent |
+|--------------------------------------|------------|
+| ReferralNetwork.py (core logic)      | ~1 hr 30 min |
+| Simulation.py (simulation engine)    | ~1 hr |
+| test_simulation.py (test suite)      | ~45 min |
+| README.md (documentation)            | ~20 min |
+| requirements.txt (dependencies)      | ~5 min |
+| Debugging & fixing imports           | ~15 min |
+| **Total**                            | **~3 hr 55 min** |
+
+
 ## Acknowledgment of AI assistance
 
 Parts of this codebase were developed with the help of AI tools (e.g., ChatGPT) for:
