@@ -44,9 +44,9 @@ pytest -k "test_simulate_basic_growth"
 ## Design choices
 
 ### Data structure
-1) ReferralNetwork uses Python classes to model the network of referrers.
+1) I used Python classes to model the network of referrers.
 2) Lists are used for sequential simulation, and dictionaries are used for quick lookups of referral counts and capacities.
-3)The approach balances simplicity and efficiency, making it easy to expand later if more complex referral rules are added.
+3) The approach balances simplicity and efficiency, making it easy to expand later if more complex referral rules are added.
 
 ### API Design
 1) Simulation Class:
