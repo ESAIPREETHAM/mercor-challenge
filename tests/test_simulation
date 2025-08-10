@@ -1,0 +1,49 @@
+# tests/test_simulation.py
+import math
+import pytest
+from source.Simulation import Simulation
+
+def test_simulate_basic_growth():
+    sim = Simulation(initial_referrers=10, referral_capacity=5)
+    result = sim.simulate(p=1.0, days=3)
+    assert len(result) == 3
+    assert result[0] > 0  # First day should have growth
+    assert result[1] >= result[0]  # Cumulative should be non-decreasing or increasing
+
+def test_simulate_zero_probability():
+    sim = Simulation(initial_referrers=10, referral_capacity=5)
+    result = sim.simulate(p=0.0, days=5)
+    assert all(val == 0 for val in result)  # No growth expected
+
+def test_simulate_capacity_limit():
+    sim = Simulation(initial_referrers=2, referral_capacity=1)
+    result = sim.simulate(p=5, days=3)
+    # Capacity is so small that growth should stop quickly
+    assert result[-1] <= 2  # Max total referrals possible
+
+def test_days_to_target_exact_hit():
+    sim = Simulation(initial_referrers=5, referral_capacity=2)
+    days = sim.days_to_target(p=1.0, target_total=5)
+    assert isinstance(days, int)
+    assert days > 0
+
+def test_days_to_target_unachievable():
+    sim = Simulation(initial_referrers=1, referral_capacity=1)
+    days = sim.days_to_target(p=0.0, target_total=5)
+    assert days is None
+
+# Optional: If implementing min_bonus_for_target
+def test_min_bonus_for_target():
+    def fake_adoption_prob(bonus):
+        return min(1.0, bonus / 100.0)  # Simple linear scaling
+
+    from source.Simulation import min_bonus_for_target
+    bonus = min_bonus_for_target(
+        days=5,
+        target_hires=10,
+        adoption_prob=fake_adoption_prob,
+        eps=1e-3
+    )
+    assert bonus % 10 == 0
+    assert bonus >= 0
+# these are my functions to operate
