@@ -41,26 +41,27 @@ example:
 pytest -k "test_simulate_basic_growth"
 ```
 
-##Design choices
-###Data structure
+## Design choices
+
+### Data structure
 1) ReferralNetwork uses Python classes to model the network of referrers.
 2) Lists are used for sequential simulation, and dictionaries are used for quick lookups of referral counts and capacities.
 3)The approach balances simplicity and efficiency, making it easy to expand later if more complex referral rules are added.
 
-###API Design
+### API Design
 1) Simulation Class:
      i) simulate(p, days) → Runs simulation for a given adoption probability p and duration in days, returning cumulative hires per day.
      ii)days_to_target(p, target_total) → Calculates the minimum number of days needed to hit a target total hires.
 2) Modularity: Referral logic and simulation logic are split into separate files (ReferralNetwork.py and Simulation.py) under source/.
 3) Testability: All major logic paths are covered in tests/ using pytest.
 
-###Dependancy management
+### Dependancy management
 I have listed all dependencies in requirements.txt
 Install them with: 
 ```bash
 pip install -r requirements.txt
 ```
-##Acknowledgment of AI assistance
+## Acknowledgment of AI assistance
 
 Parts of this codebase were developed with the help of AI tools (e.g., ChatGPT) for:
   i) I used it for only boilerplate code generation
